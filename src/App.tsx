@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Chemistry from './component/Chemistry';
+import { BrowserRouter,Routes,Route ,Link} from 'react-router-dom';
+import Physics from './component/Physics';
+import Allsub from './component/Allsub';
+import Math from './component/Math';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>DEMO ONLINE TEST</header>
+      <div>
+    <BrowserRouter>
+    <Routes>
+      <Route path={"/"} element={<Allsub/>}></Route>
+      <Route path='allsubject' element={<Allsub/>}  ></Route>
+      <Route path='physics' element={<Physics/>}></Route>
+      <Route path='chemistry' element={ <Chemistry/>}></Route>
+      <Route path='math' element={<Math/>}></Route>
+
+    </Routes>
+    
+    </BrowserRouter>
+    </div>
+
+    <footer>@ Addmen</footer>
     </div>
   );
 }
